@@ -13,14 +13,16 @@ function getonairLoop(){
       var conteudoClass = conteudoSchedule[0].ageRating;
       var conteudoInicio = parseInt(conteudoSchedule[0].startTime);
       var conteudoFim = parseInt(conteudoSchedule[0].endTime);
+      var dateInicio = new Date(conteudoInicio);
+      var dateFim = new Date(conteudoFim);
       if (conteudoClass == "1") conteudoClass = "LIVRE";
       else if (conteudoClass != "1") conteudoClass = conteudoClass + ' ANOS';
       console.log(conteudoTitulo);
       document.getElementById("showBanner").src = conteudoBanner;
       document.getElementById("titulo").innerHTML = 'Título: ' + conteudoTitulo;
       document.getElementById("clas").innerHTML = 'Classificação: ' + conteudoClass;
-      document.getElementById("come").innerHTML = 'Início: ' + new Date(conteudoInicio).toLocaleString('en-GB', { hour:'numeric', minute:'numeric', second:'numeric', hour12:false } );
-      document.getElementById("fim").innerHTML = 'Fim: ' + new Date(conteudoFim).toLocaleString('en-GB', { hour:'numeric', minute:'numeric', second:'numeric', hour12:false } );
+      document.getElementById("come").innerHTML = 'Início: ' + dateInicio.toLocaleString('en-GB', { hour:'numeric', minute:'numeric', second:'numeric', hour12:false } );
+      document.getElementById("fim").innerHTML = 'Fim: ' + dateFim.toLocaleString('en-GB', { hour:'numeric', minute:'numeric', second:'numeric', hour12:false } );
     }
   };
   xhttp.open("GET", apiUrl, true);
