@@ -6,7 +6,7 @@ function getonairLoop(){
     if (this.readyState == 4 && this.status == 200) {
       var conteudo = JSON.parse(this.responseText);
       var conteudoRoot = conteudo.response[0];
-      alert(conteudoRoot);
+      var conteudoSchedule = conteudoRoot.title;
       document.getElementById("av").innerHTML = 'teste'
     }
     else {
