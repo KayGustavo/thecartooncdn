@@ -10,8 +10,8 @@ function getonairLoop(){
       var conteudoSchedule = conteudoRoot.schedules;
       var conteudoTitulo = conteudoSchedule[0].title;
       var conteudoBanner = conteudoSchedule[0].images.banner;
-      var conteudoClass = conteudoSchedule[0].ageRating;
-      var conteudoInicio = conteudoSchedule[0].startTime;
+      var conteudoClass = parseInt(conteudoSchedule[0].ageRating);
+      var conteudoInicio = parseInt(conteudoSchedule[0].startTime;);
       var conteudoFim = conteudoSchedule[0].endTime;
       if (conteudoClass == "1") conteudoClass = "LIVRE";
       else if (conteudoClass != "1") conteudoClass = conteudoClass + ' ANOS';
