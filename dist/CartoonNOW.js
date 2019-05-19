@@ -1,3 +1,4 @@
+window.onload = function() {
 function getonairLoop(){
   var apiUrl = 'https://www.nowonline.com.br/avsclient/epg/livechannels/cartoon-network?channel=PCTV&numberOfSchedules=1&includes=images'
   var xhttp = new XMLHttpRequest();
@@ -9,10 +10,7 @@ function getonairLoop(){
       var conteudoSchedule = conteudoRoot.schedules;
       var conteudoTitulo = conteudoSchedule[0].title;
       alert(conteudoTitulo);
-      document.getElementById("av").innerHTML = 'teste ' + conteudoSchedule;
-    }
-    else {
-      document.getElementById("strawberryFlavour").innerHTML = 'Erro! Um problema técnico impossibilita a recepção da programação.';
+      document.getElementById("av").innerHTML = 'teste ' + conteudoTitulo;
     }
   };
   xhttp.open("GET", apiUrl, true);
@@ -21,3 +19,4 @@ function getonairLoop(){
 }
 
 getonairLoop()
+}
