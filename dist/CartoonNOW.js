@@ -9,7 +9,7 @@ function getonairLoop(){
       var conteudoRoot = conteudo.response[0];
       var conteudoSchedule = conteudoRoot.schedules;
       var conteudoTitulo = conteudoSchedule[0].title;
-      var conteudoBanner = conteudoSchedule['images'].banner;
+      var conteudoBanner = conteudoSchedule.images.banner;
       console.log(conteudoTitulo);
       document.getElementById("showBanner").src = conteudoBanner;
       document.getElementById("av").innerHTML = 'teste ' + conteudoTitulo;
