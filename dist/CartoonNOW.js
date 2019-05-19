@@ -6,7 +6,9 @@ function getonairLoop(){
     if (this.readyState == 4 && this.status == 200) {
       var conteudo = JSON.parse(this.responseText);
       var conteudoRoot = conteudo.response[0];
-      var conteudoSchedule = conteudoRoot.title;
+      var conteudoSchedule = conteudoRoot.schedules;
+      var conteudoTitulo = [0].title;
+      alert(conteudoTitulo);
       document.getElementById("av").innerHTML = 'teste ' + conteudoSchedule;
     }
     else {
