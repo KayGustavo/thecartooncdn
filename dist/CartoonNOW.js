@@ -10,11 +10,12 @@ function getonairLoop(){
       var conteudoSchedule = conteudoRoot.schedules;
       var conteudoTitulo = conteudoSchedule[0].title;
       var conteudoBanner = conteudoSchedule[0].images.banner;
-      var conteudoTemp = conteudoSchedule[0].seasonNumber;
-      var conteudoEpi = conteudoSchedule[0].episodeNumber;
+      var conteudoClass = conteudoSchedule[0].ageRating;
+      if (conteudoClass == "1") conteudoClass = "LIVRE";
       console.log(conteudoTitulo);
       document.getElementById("showBanner").src = conteudoBanner;
-      document.getElementById("titulo").innerHTML = 'Título: ' + conteudoTitulo + ' T0'+ conteudoTemp + 'E'+ conteudoEpi;
+      document.getElementById("titulo").innerHTML = 'Título: ' + conteudoTitulo;
+      document.getElementById("clas").innerHTML = 'Classificação: ' + conteudoClass;
     }
   };
   xhttp.open("GET", apiUrl, true);
