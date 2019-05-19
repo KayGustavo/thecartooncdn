@@ -7,7 +7,7 @@ function getonairLoop(){
       var conteudo = JSON.parse(this.responseText);
       var conteudoRoot = conteudo.response[0];
       var conteudoSchedule = conteudoRoot.title;
-      document.getElementById("av").innerHTML = 'teste'
+      document.getElementById("av").innerHTML = 'teste ' + conteudoSchedule;
     }
     else {
       document.getElementById("strawberryFlavour").innerHTML = 'Erro! Um problema técnico impossibilita a recepção da programação.';
