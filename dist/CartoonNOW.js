@@ -10,9 +10,11 @@ function getonairLoop(){
       var conteudoSchedule = conteudoRoot.schedules;
       var conteudoTitulo = conteudoSchedule[0].title;
       var conteudoBanner = conteudoSchedule[0].images.banner;
+      var conteudoTemp = conteudoSchedule[0].seasonNumber;
+      var conteudoEpi = conteudoSchedule[0].episodeNumber;
       console.log(conteudoTitulo);
       document.getElementById("showBanner").src = conteudoBanner;
-      document.getElementById("av").innerHTML = 'teste ' + conteudoTitulo;
+      document.getElementById("titulo").innerHTML = 'Título: ' + conteudoTitulo + ' T0'+ conteudoTemp + 'E'+ conteudoEpi;
     }
   };
   xhttp.open("GET", apiUrl, true);
