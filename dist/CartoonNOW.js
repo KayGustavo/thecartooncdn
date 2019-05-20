@@ -44,7 +44,7 @@ window.onload = function() {
                     second: 'numeric',
                     hour12: false
                 });
-                document.getElementById("rest").innerHTML = 'Termina em ' + millisToMinutesAndSeconds(dateRestante) + '.';
+                document.getElementById("rest").innerHTML = 'Termina em ' + millisToMinutesAndSeconds(dateRestante) + '';
             }
         };
         xhttp.open("GET", apiUrl, true);
