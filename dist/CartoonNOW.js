@@ -49,7 +49,7 @@ window.onload = function() {
         };
         xhttp.open("GET", apiUrl, true);
         xhttp.send();
-        setTimeout(getonairLoop, 1000);
+        setTimeout(getonairLoop, 10000);
     }
 
     getonairLoop();
