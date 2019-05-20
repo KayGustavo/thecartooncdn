@@ -23,13 +23,15 @@ window.onload = function() {
                 var dateInicio = new Date(conteudoInicio);
                 var dateFim = new Date(conteudoFim);
                 var dateRestante = Math.abs(dateAtual - conteudoFim);
-                //console.log(dateRestante); desabilitado em modo de produção
+                var dateDura = Math.abs(dateInicio - dateFim);
+                /* console.log(dateRestante); desabilitado em modo de produção */
                 if (conteudoClass == "1") conteudoClass = "LIVRE";
                 else if (conteudoClass != "1") conteudoClass = conteudoClass + ' ANOS';
-                //onsole.log(conteudoTitulo); desabilitado em modo de produção
+                /* console.log(conteudoTitulo); desabilitado em modo de produção */
                 document.getElementById("showBanner").src = conteudoBanner;
                 document.getElementById("titulo").innerHTML = 'Título: ' + conteudoTitulo;
                 document.getElementById("clas").innerHTML = 'Classificação: ' + conteudoClass;
+                document.getElementById("duraxd").innerHTML = 'Duração: ' + millisToMinutesAndSeconds(dateDura) + '';
                 document.getElementById("come").innerHTML = 'Início: ' + dateInicio.toLocaleString('en-GB', {
                     hour: 'numeric',
                     minute: 'numeric',
@@ -47,7 +49,7 @@ window.onload = function() {
         };
         xhttp.open("GET", apiUrl, true);
         xhttp.send();
-        setTimeout(getonairLoop, 10000);
+        setTimeout(getonairLoop, 1000);
     }
 
     getonairLoop();
