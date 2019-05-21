@@ -3,7 +3,7 @@ window.onload = function() {
         /* https://stackoverflow.com/a/21294619/10077439 */
         var minutes = Math.floor(millis / 60000);
         var seconds = ((millis % 60000) / 1000).toFixed(0);
-        return minutes + "m" + (seconds < 10 ? '0' : '') + seconds + 's';
+        return (seconds == 60 ? (minutes+1) + "00s" : minutes + "m" + (seconds < 10 ? "0" : "") + seconds + 's');
     }
 
     function getonairLoop() {
