@@ -31,8 +31,8 @@ window.onload = function () {
 
     /* minutos */
 
-    if (seconds < 1) seconds = ''
-    else seconds += 'm'
+    if (minutes < 1) minutes = ''
+    else minutes += 'm'
 
     /* horas */
 
