@@ -46,6 +46,17 @@ window.onload = function () {
     return minutes + seconds
   }
 
+  var situacao = 'hidden'
+  $('#mostrarSinopse').click(function () {
+    if (situacao == 'hidden') {
+      $('sinopseRoot').slideDown()
+      situacao = 'show'
+    } else {
+      $('sinopseRoot').slideUp()
+      situacao = 'hidden'
+    }
+  })
+
   function getonairLoop () {
     var apiUrl = 'https://www.nowonline.com.br/avsclient/epg/livechannels/cartoon-network?channel=PCTV&numberOfSchedules=1&includes=images'
     var xhttp = new XMLHttpRequest()
@@ -56,6 +67,7 @@ window.onload = function () {
         var conteudoRoot = conteudo.response[0]
         var conteudoSchedule = conteudoRoot.schedules
         var conteudoTitulo = conteudoSchedule[0].title
+        var conteudoSinopse = conteudoSchedule[0].description
         var conteudoBanner = conteudoSchedule[0].images.banner
         var conteudoClass = conteudoSchedule[0].ageRating
         var conteudoInicio = conteudoSchedule[0].startTime * 1000
@@ -70,6 +82,7 @@ window.onload = function () {
         /* console.log(conteudoTitulo); desabilitado em modo de produção */
         document.getElementById('showBanner').src = conteudoBanner
         document.getElementById('titulo').innerHTML = 'Título: ' + conteudoTitulo
+        document.GetElementById('sinopse').innerHTML = conteudoSinopse
         document.getElementById('clas').innerHTML = 'Classificação: ' + conteudoClass
         document.getElementById('duraxd').innerHTML = 'Duração: ' + millisToMinutesAndSeconds(dateDura) + ''
         document.getElementById('come').innerHTML = 'Início: ' + dateInicio.toLocaleString('en-GB', {
