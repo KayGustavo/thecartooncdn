@@ -82,7 +82,7 @@ window.onload = function () {
         /* console.log(conteudoTitulo); desabilitado em modo de produção */
         document.getElementById('showBanner').src = conteudoBanner
         document.getElementById('titulo').innerHTML = 'Título: ' + conteudoTitulo
-        document.GetElementById('sinopse').innerHTML = conteudoSinopse
+        document.getElementById('sinopse').innerHTML = conteudoSinopse
         document.getElementById('clas').innerHTML = 'Classificação: ' + conteudoClass
         document.getElementById('duraxd').innerHTML = 'Duração: ' + millisToMinutesAndSeconds(dateDura) + ''
         document.getElementById('come').innerHTML = 'Início: ' + dateInicio.toLocaleString('en-GB', {
