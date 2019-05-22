@@ -46,17 +46,6 @@ window.onload = function () {
     return minutes + seconds
   }
 
-  var situacao = 'hidden'
-  $('#mostrarSinopse').click(function () {
-    if (situacao == 'hidden') {
-      $('sinopseRoot').slideDown()
-      situacao = 'show'
-    } else {
-      $('sinopseRoot').slideUp()
-      situacao = 'hidden'
-    }
-  })
-
   function getonairLoop () {
     var apiUrl = 'https://www.nowonline.com.br/avsclient/epg/livechannels/cartoon-network?channel=PCTV&numberOfSchedules=1&includes=images'
     var xhttp = new XMLHttpRequest()
